@@ -1,10 +1,16 @@
 __author__ = 'pld'
 
 
-class ListNode(object):
-    def __init__(self, x):
-        self.val = x
-        self.next = None
+import linkutils
+
+"""
+Reverse a linked list from position m to n. Do it in-place and in one-pass.
+
+For example:
+Given 1->2->3->4->5->NULL, m = 2 and n = 4,
+
+return 1->4->3->2->5->NULL.
+"""
 
 
 def reverse_list(head, m, n):
@@ -14,9 +20,8 @@ def reverse_list(head, m, n):
     :param n: int
     :return: ListNode
     """
-    dummy = ListNode(-1)
+    before = dummy = linkutils.ListNode(-1)
     dummy.next = head
-    before = dummy
     for i in range(m - 1):
         if before is None:
             return head
@@ -26,6 +31,7 @@ def reverse_list(head, m, n):
     if start is None:
         return head
     before.next = None
+    j = 0
     for i in range(n - m + 1):
         if current is None:
             break
@@ -36,17 +42,6 @@ def reverse_list(head, m, n):
     start.next = current
     return dummy.next
 
-node1 = ListNode(0)
-node2 = ListNode(1)
-node3 = ListNode(2)
-node4 = ListNode(3)
-node5 = ListNode(4)
-node1.next = node2
-node2.next = node3
-node3.next = node4
-node4.next = node5
 
-new_head = reverse_list(node1, 4, 3)
-while new_head is not None:
-    print(new_head.val)
-    new_head = new_head.next
+head = reverse_list(linkutils.parse_array_2_list([0, 1, 2, 3, 4]), 3, 4)
+linkutils.iterate_linked_list(head)

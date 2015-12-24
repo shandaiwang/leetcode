@@ -1,4 +1,6 @@
-#
+__author__ = 'pld'
+
+
 from functools import reduce
 from operator import xor
 

@@ -1,10 +1,11 @@
 __author__ = 'pld'
 
 
-class ListNode(object):
-    def __init__(self, x):
-        self.val = x
-        self.next = None
+import linkutils
+
+"""
+Reverse a singly linked list.
+"""
 
 
 def reverse_list(head):
@@ -21,17 +22,5 @@ def reverse_list(head):
         current = next_node
     return sentinel
 
-node1 = ListNode(0)
-node2 = ListNode(1)
-node3 = ListNode(2)
-node4 = ListNode(3)
-node5 = ListNode(4)
-node1.next = node2
-node2.next = node3
-node3.next = node4
-node4.next = node5
-
-new_head = reverse_list(node1)
-while new_head is not None:
-    print(new_head.val)
-    new_head = new_head.next
+head = reverse_list(linkutils.parse_array_2_list([0, 1, 2, 3, 4]))
+linkutils.iterate_linked_list(head)

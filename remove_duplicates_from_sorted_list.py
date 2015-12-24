@@ -2,11 +2,13 @@ __author__ = 'pld'
 
 import linkutils
 
-# Given a sorted linked list, delete all duplicates such that each element appear only once.
-#
-# For example,
-# Given 1->1->2, return 1->2.
-# Given 1->1->2->3->3, return 1->2->3.
+"""
+Given a sorted linked list, delete all duplicates such that each element appear only once.
+
+For example,
+Given 1->1->2, return 1->2.
+Given 1->1->2->3->3, return 1->2->3.
+"""
 
 class Solution(object):
     def deleteDuplicates1(self, head):
